@@ -18,12 +18,11 @@ class Validator {
     const total = [...add, ...__impar__];
     const finish = total.reduce((acc: number, num: number) => (acc += num), 0);
 
-    return (finish % 10 === 0) ? true : false;
+    return finish % 10 === 0 ? true : false;
   }
 
   public maskify(num: string): string {
-    return num.slice(0,-4).replace(/./g, '#') + num.slice(4);
+    return num.slice(0, -4).replace(/./g, "#") + num.slice(4);
   }
 }
-
 export default Validator;
