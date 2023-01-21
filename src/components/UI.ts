@@ -59,7 +59,7 @@ class UI {
     const $forCardNUmber = document.createElement("input");
     $formName.setAttribute("type", "text");
     $formName.setAttribute("name", "number");
-    $formName.setAttribute('autocomplete', 'off')
+    $formName.setAttribute("autocomplete", "off");
     $forCardNUmber.className =
       "relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm";
 
@@ -69,22 +69,24 @@ class UI {
     $buttonProvider.className =
       "group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2";
 
-    $forCardNUmber.addEventListener('input', () => {
+    $forCardNUmber.addEventListener("input", () => {
       const validator = new Validator();
       const maskify = validator.maskify($forCardNUmber.value);
-      $num.textContent =  maskify;
-      if($num.textContent === '') {
+      $num.textContent = maskify;
+      if ($num.textContent === "") {
         $num.textContent = "#### #### #### ###";
       }
-    })
-    $formName.addEventListener('keyup', () => {
+    });
+    $formName.addEventListener("input", () => {
       $name.textContent = $formName.value;
-    })
+    });
     $form.addEventListener("submit", (e): void => {
       e.preventDefault();
       const validator = new Validator();
       const isValid = validator.isValid($forCardNUmber.value);
-      isValid ? alert("Numero de tarjeta valido") : alert("Numero de tarjeta invalido");
+      isValid
+        ? alert("Numero de tarjeta valido")
+        : alert("Numero de tarjeta invalido");
       $form.reset();
       $formName.focus();
     });
