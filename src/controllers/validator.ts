@@ -22,7 +22,7 @@ class Validator {
   }
 
   public maskify(num: string): string {
-    return num.slice(0, -4).replace(/./g, "#") + num.slice(4);
+    return num.slice(0, 4).replace(/./g, "#") + num.slice(4);
   }
 }
 export default Validator;
