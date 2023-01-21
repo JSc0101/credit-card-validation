@@ -25,7 +25,7 @@ class UI {
     $imgCard.setAttribute("src", "../../public/img/chip.jpg");
 
     const $containerInfo = document.createElement("div");
-    const $num = document.createElement("p");
+    const $num = document.createElement("p") as unknown as HTMLParagraphElement;
     $num.textContent = "#### #### #### ####";
     $num.className = "text-purple-800 text-3xl w-max p-3";
 
@@ -73,6 +73,9 @@ class UI {
       const validator = new Validator();
       const maskify = validator.maskify($forCardNUmber.value);
       $num.textContent =  maskify;
+      if($num.textContent === '') {
+        $num.textContent = "#### #### #### ###";
+      }
     })
     $formName.addEventListener('keyup', () => {
       $name.textContent = $formName.value;
