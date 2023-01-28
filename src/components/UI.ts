@@ -7,7 +7,7 @@ class UI {
     $root.className = "bg-zinc-800 h-screen flex justify-center items-center";
 
     const $container = document.createElement("section");
-    $container.className = "w-full flex flex-col items-center";
+    $container.className = "w-full flex flex-col items-center gap-5 px-4";
 
     const $card = document.createElement("div");
     $card.className =
@@ -22,7 +22,7 @@ class UI {
     const $containerImg = document.createElement("div");
     const $containerImgCard = document.createElement("figure");
     const $imgCard = document.createElement("img");
-    $imgCard.setAttribute("src", "../../public/img/chip.jpg");
+    $imgCard.setAttribute("src", "https://i.postimg.cc/g0hFtXRs/chip.jpg");
 
     const $containerInfo = document.createElement("div");
     const $num = document.createElement("p") as unknown as HTMLParagraphElement;
@@ -34,7 +34,7 @@ class UI {
     $name.textContent = "Name";
 
     const $containerForm = document.createElement("div");
-    $containerForm.className = "bg-zinc-700 p-14 w-2/4 rounded-md";
+    $containerForm.className = "bg-zinc-700 p-14 rounded-md w-full md:w-2/4";
 
     const $form = document.createElement("form");
     $form.className = "mt-8 space-y-6";
